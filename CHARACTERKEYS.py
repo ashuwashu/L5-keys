@@ -16,6 +16,8 @@ while player_y < 600:
     Screen.blit(BG, (0,0))
     Screen.blit(player, (player_x, player_y))
 
+    pygame.display.update()
+
     for event in pygame.event.get():
         if event.type==pygame.QUIT:
             pygame.quit()
@@ -43,7 +45,7 @@ while player_y < 600:
 
     if keys[0]:
         if player_y > 0:
-            player_y=player_y - 5
+            player_y=player_y - 10
 
     if keys[3]:
         if player_y < 580:
@@ -54,8 +56,8 @@ while player_y < 600:
             player_x=player_x - 5
             
     if keys[2]:
-        if player_x > 750:
-            player_x=player_x - 5
+        if player_x < 750:
+            player_x=player_x + 5
 
 
     player_y=player_y + 5
